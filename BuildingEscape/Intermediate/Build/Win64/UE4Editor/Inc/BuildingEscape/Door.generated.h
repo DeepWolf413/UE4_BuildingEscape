@@ -13,8 +13,44 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BUILDINGESCAPE_Door_generated_h
 
-#define BuildingEscape_Source_BuildingEscape_Door_h_12_RPC_WRAPPERS
-#define BuildingEscape_Source_BuildingEscape_Door_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define BuildingEscape_Source_BuildingEscape_Door_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execClose) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->Close(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOpen) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->Open(); \
+		P_NATIVE_END; \
+	}
+
+
+#define BuildingEscape_Source_BuildingEscape_Door_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execClose) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->Close(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOpen) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->Open(); \
+		P_NATIVE_END; \
+	}
+
+
 #define BuildingEscape_Source_BuildingEscape_Door_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesADoor(); \
@@ -59,7 +95,11 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ADoor); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ADoor)
 
 
-#define BuildingEscape_Source_BuildingEscape_Door_h_12_PRIVATE_PROPERTY_OFFSET
+#define BuildingEscape_Source_BuildingEscape_Door_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__OpenDegrees() { return STRUCT_OFFSET(ADoor, OpenDegrees); } \
+	FORCEINLINE static uint32 __PPO__DoorInstance() { return STRUCT_OFFSET(ADoor, DoorInstance); }
+
+
 #define BuildingEscape_Source_BuildingEscape_Door_h_9_PROLOG
 #define BuildingEscape_Source_BuildingEscape_Door_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
